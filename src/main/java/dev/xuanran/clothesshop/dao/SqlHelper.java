@@ -5,22 +5,22 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
+/**
+ * Created by XuanRan on 2022/05/23
+ * SQL工具类
+ */
 public class SqlHelper {
-    // 定义要使用的变量
     private static Connection conn = null;
     private static PreparedStatement ps = null;
     private static ResultSet rs = null;
     private static CallableStatement cs = null;
-
     private static String driver = "";
     private static String url = "";
     private static String user = "";
     private static String password = "";
-
     private static Properties pp = null;
     private static InputStream is = null;
 
-    // 加载驱动，只需要一次
     static {
         try {
             System.out.println("加载成功");

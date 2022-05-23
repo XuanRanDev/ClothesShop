@@ -123,14 +123,14 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion"
-                                                               href="#collapseTwo">菜品管理</a></h4>
+                                                               href="#collapseTwo">服装管理</a></h4>
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse">
                                     <div class="panel-body aaa" style="text-align: center;">
-                                        <a class="aaa" target="frame" href="<c:url value="/food"/>">菜品信息</a>
+                                        <a class="aaa" target="frame" href="<c:url value="/food"/>">服装信息</a>
                                     </div>
                                     <div class="panel-body aaa" style="text-align: center;">
-                                        <a class="aaa" target="frame" href="<c:url value="/addFood"/>">添加菜品</a>
+                                        <a class="aaa" target="frame" href="<c:url value="/addFood"/>">添加服装</a>
                                     </div>
                                 </div>
                             </div>

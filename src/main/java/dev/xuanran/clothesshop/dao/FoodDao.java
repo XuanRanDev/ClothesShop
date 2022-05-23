@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FoodDao {
     /**
-     * 根据ID查询菜品
+     * 根据ID查询服装
      */
     public static Food searchById(int id) {
         String sql = "SELECT * FROM food WHERE f_id=?";
@@ -36,7 +36,7 @@ public class FoodDao {
     }
 
     /*
-     *添加菜品信息
+     *添加服装信息
      * */
     public boolean inFood(Food food) {
         String sql = "insert into food(f_image,f_name,price,f_content) values(?,?,?,?)";
@@ -50,7 +50,7 @@ public class FoodDao {
     }
 
     /*
-     * 修改菜品信息
+     * 修改服装信息
      * */
     public boolean saveFood(Food food) {
         String sql = "update food set f_image=?,f_name=?,price=?,f_content=? where f_id=?";
@@ -65,7 +65,7 @@ public class FoodDao {
     }
 
     /*
-     * 删除菜品
+     * 删除服装
      * */
     public boolean delByFid(Integer id) {
         String sql = "delete from food where f_id = ?";
@@ -73,7 +73,7 @@ public class FoodDao {
         return true;
     }
 
-    //菜品名的模糊查询
+    //服装名的模糊查询
     public List<Food> findMeu(String key) {
         String sql = "select * from food where f_name like ?";
         String[] ps = new String[1];
@@ -97,7 +97,7 @@ public class FoodDao {
         return list;
     }
 
-    //将菜品信息查出来
+    //将服装信息查出来
     public List<Food> findAll() {
         String sql = "select * from food";
         ResultSet resultSet = SqlHelper.executeQuery(sql, null);

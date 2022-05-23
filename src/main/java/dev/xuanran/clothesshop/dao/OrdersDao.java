@@ -51,7 +51,7 @@ public class OrdersDao {
     /*
      * 管理员订单信息用户id模糊查询
      * */
-    //菜品名的模糊查询
+    // 服装名的模糊查询
     public List<Orders> findOreders(String key) {
         String sql = "select orders.o_id,user.loginId,food.f_name,orders.o_num,food.price * orders.o_num as num,orders.markup,orders.state,orders.pzstate,user.mobile \n" +
                 "from orders join user on orders.u_id = user.u_id join food on orders.f_id = food.f_id where loginId like ?;";

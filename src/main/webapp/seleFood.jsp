@@ -15,7 +15,7 @@
     <body>
 
         <div>
-            <div style="text-align:center;margin:0 auto;"><span style="font-size: 50px;">菜品信息</span></div>
+            <div style="text-align:center;margin:0 auto;"><span style="font-size: 50px;">服装信息</span></div>
             <div style="margin-left: 690px;">
                 <form method="get" action="<c:url value="/seleFood"/>">
                     <input type="text" name="key" value="<c:out value="${param.key}" />"/>
@@ -25,7 +25,7 @@
             <table class="table table-hover table-bordered">
                 <tr>
                     <td style="text-align: center;">菜名</td>
-                    <td style="text-align: center;">菜品介绍</td>
+                    <td style="text-align: center;">服装介绍</td>
                     <td style="text-align: center;">价格</td>
                     <td style="text-align: center;">图片路径</td>
                     <td style="text-align: center;">操作</td>

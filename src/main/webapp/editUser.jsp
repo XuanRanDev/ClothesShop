@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>菜鸟订餐</title>
+        <title>渲染网上服装商城</title>
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/nav.css">
         <link rel="stylesheet" href="css/commons.css">
@@ -50,14 +50,14 @@
             <div class="nav">
                 <div class="logo-area left ">
                     <a href="#">
-                        <span style="font-size: 20px;color:black">菜鸟订餐</span>
+                        <span style="font-size: 20px;color:black">渲染网上服装商城</span>
                     </a>
                 </div>
 
                 <div class="left-menu left">
                     <c:choose>
                         <c:when test="${user.loginId!=null}">
-                            <a href="<c:url value="/main"/>" class="menu-item">菜品信息</a>
+                            <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="<c:url value="/shopping"/>" class="menu-item">我的购物车</a>
                             <a href="<c:url value="/order_search"/>" class="menu-item">订单查询</a>
                             <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
@@ -72,7 +72,7 @@
                             </div>
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value="/main"/>" class="menu-item">菜品信息</a>
+                            <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="#" class="menu-item" onclick="return tc()">我的购物车</a>
                             <a href="#" class="menu-item" onclick="return tc()">订单查询</a>
                             <a href="<c:url value="/comment"/>" class="menu-item">评论</a>

@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>菜鸟订餐</title>
+        <title>渲染网上服装商城</title>
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/nav.css">
         <link rel="stylesheet" href="css/commons.css">
@@ -54,20 +54,20 @@
            }
            */
         %>
-        <jsp:useBean id="user" scope="session" class="cn.com.scitc.model.User"></jsp:useBean>
-        <jsp:useBean id="food" scope="page" class="cn.com.scitc.model.Food"></jsp:useBean>
+        <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
+        <jsp:useBean id="food" scope="page" class="dev.xuanran.clothesshop.model.Food"></jsp:useBean>
         <div class="pg-header">
             <div class="nav">
                 <div class="logo-area left ">
                     <a href="#">
-                        <span style="font-size: 20px;color:black">菜鸟订餐</span>
+                        <span style="font-size: 20px;color:black">渲染网上服装商城</span>
                     </a>
                 </div>
 
                 <div class="left-menu left">
                     <c:choose>
                         <c:when test="${user.loginId!=null}">
-                            <a href="<c:url value="/main"/>" class="menu-item">菜品信息</a>
+                            <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="<c:url value="/shopping"/>" class="menu-item">我的购物车</a>
                             <a href="<c:url value="/order_search"/>" class="menu-item">订单查询</a>
                             <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
@@ -82,7 +82,7 @@
                             </div>
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value="/main"/>" class="menu-item">菜品信息</a>
+                            <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="#" class="menu-item" onclick="return tc()">我的购物车</a>
                             <a href="#" class="menu-item" onclick="return tc()">订单查询</a>
                             <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
@@ -151,7 +151,7 @@
         <div class="pg-body">
             <div class="left-menu">
                 <div class="menu-body">
-                    <h4 style="margin-left: 10px;">搜索菜品:</h4>
+                    <h4 style="margin-left: 10px;">搜索服装:</h4>
                     <form action="<c:url value="/seleF_name"/>" method="get">
                         <div style="margin-left: 10px;margin-top:10px;">
                             <input type="text" name="key" value="<c:out value="${param.key}"/>"/>
@@ -168,7 +168,7 @@
                     <table class="table">
 
                         <div style="background: #8c8c8c">
-                            所有菜品
+                            所有服装
                         </div>
 
                         <tr>

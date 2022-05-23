@@ -18,7 +18,7 @@ public class Orders {
     private String markup;      //备注
     private String state;       //状态
     private String loginId;   //用户ID
-    private String f_name;   //菜品名字
+    private String f_name;   // 服装名称
     private Integer num;   //总价格
     private String pzstate;
     private String mobile;
@@ -208,11 +208,11 @@ public class Orders {
         return showNoPayList;
 //		<tr class="tr">
 //        <td class="td1"><span class="no">1</span></td>
-//        <td class="td1"><span class="food">菜品</span></td>
+//        <td class="td1"><span class="food">服装</span></td>
 //        <td class="td1"><span class="number">1</span></td>
 //        <td class="td1"><span class="per_price">19.0</span></td>
 //        <td class="td1"><span class="price">19.0</span></td>
-//        <td class="td1"><span class="information">菜品信息</span></td>
+//        <td class="td1"><span class="information">服装信息</span></td>
 //    	</tr>
     }
 

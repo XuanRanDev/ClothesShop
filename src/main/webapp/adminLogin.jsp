@@ -16,7 +16,7 @@
             <div class="login">
                 <form action="<c:url value="/loginAdmin"/>" method="post">
                     <div class="login-top">
-                        菜鸟订餐后台登录
+                        渲染网上服装商城后台登录
                     </div>
                     <div class="login-center clearfix">
                         <div class="login-center-img"><img src="images/name.png"></div>

@@ -1,12 +1,12 @@
-<%@ page import="cn.com.scitc.model.Food" %>
-<%@ page import="cn.com.scitc.dao.FoodDao" %>
+<%@ page import="dev.xuanran.clothesshop.model.Food" %>
+<%@ page import="dev.xuanran.clothesshop.dao.FoodDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>菜鸟订餐</title>
+        <title>渲染网上服装商城</title>
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/nav.css">
         <link rel="stylesheet" href="css/commons.css">
@@ -98,22 +98,22 @@
         </style>
     </head>
     <body>
-        <jsp:useBean id="user" class="cn.com.scitc.model.User" scope="session"></jsp:useBean>
-        <jsp:useBean id="ordersBean" class="cn.com.scitc.model.Orders" scope="page"></jsp:useBean>
+        <jsp:useBean id="user" class="dev.xuanran.clothesshop.model.User" scope="session"></jsp:useBean>
+        <jsp:useBean id="ordersBean" class="dev.xuanran.clothesshop.model.Orders" scope="page"></jsp:useBean>
         <jsp:setProperty property="user" name="ordersBean" value="${user}"/>
 
         <div class="pg-header">
             <div class="nav">
                 <div class="logo-area left ">
                     <a href="#">
-                        <span style="font-size: 20px;color:black">菜鸟订餐</span>
+                        <span style="font-size: 20px;color:black">渲染网上服装商城</span>
                     </a>
                 </div>
 
                 <div class="left-menu left">
                     <c:choose>
                         <c:when test="${user.loginId!=null}">
-                            <a href="<c:url value="/main"/>" class="menu-item">菜品信息</a>
+                            <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="<c:url value="/shopping"/>" class="menu-item">我的购物车</a>
                             <a href="<c:url value="/order_search"/>" class="menu-item">订单查询</a>
                             <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
@@ -128,7 +128,7 @@
                             </div>
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value="/main"/>" class="menu-item">菜品信息</a>
+                            <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="#" class="menu-item" onclick="return tc()">我的购物车</a>
                             <a href="#" class="menu-item" onclick="return tc()">订单查询</a>
                             <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
@@ -171,25 +171,6 @@
                 ---->
 
                     </div>
-                    <!------
-                    <a class="user-menu right">
-                        消息
-                        <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                        <span class="badge bg-success">2</span>
-                    </a>
-
-                    <a class="user-menu right">
-                        通知
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                        <span class="badge bg-success">2</span>
-                    </a>
-
-                    <a class="user-menu right">
-                        任务
-                        <i class="fa fa-bell-o" aria-hidden="true"></i>
-                        <span class="badge bg-danger">4</span>
-                    </a>
-                     ----->
                 </div>
 
             </div>

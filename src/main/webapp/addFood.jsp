@@ -19,7 +19,7 @@
             <form method="post" action="${pageContext.request.contextPath}/filterAdmin/foodAdd"
                   enctype="multipart/form-data">
                 <div style="margin:0 auto;width: 430px;height: 800px;">
-                    <h2 style="text-align: center">添加菜品信息</h2>
+                    <h2 style="text-align: center">添加服装信息</h2>
                     <div class="form-group" style="margin-top:20px;">
                         <label for="exampleInputFile">图　　　片：</label>
                         <input type="file" id="exampleInputFile" name="f_image" style="display: inline-block;">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group" style="margin-top:20px;">
                         <label>介　　　绍：</label>
-                        <textarea class="form-control" name="f_content" rows="3" placeholder="菜品介绍"></textarea>
+                        <textarea class="form-control" name="f_content" rows="3" placeholder="服装介绍"></textarea>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">添加</button>
                 </div>
