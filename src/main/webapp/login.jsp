@@ -25,7 +25,7 @@
 
             <div class="layui-panel" style="height: 400px">
                 <div style="padding: 50px 30px;">
-                    <form action="<c:url value="/req/login" /> " method="post">
+                    <form action="<c:url value="/loginReq" /> " method="post">
                         <h2 style="text-align: center">渲染网上服装商城</h2>
                         <label>账号：</label>
                         <input type="text" class="form-control" name="loginId" placeholder="账号" required autofocus>

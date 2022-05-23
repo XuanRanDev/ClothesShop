@@ -15,7 +15,7 @@ import java.io.IOException;
  * Created By XuanRan on 2022/05/23
  * 登录请求处理类
  */
-@WebServlet("/req/login")
+@WebServlet("/loginReq")
 public class Login_DServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
