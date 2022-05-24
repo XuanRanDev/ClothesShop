@@ -81,7 +81,7 @@
             <h2>等待配送的订单：</h2>
             <table class="table">
                 <tr class="tr">
-                    <td class="td"><span class="text">菜名</span></td>
+                    <td class="td"><span class="text">服装名</span></td>
                     <td class="td"><span class="text">数量</span></td>
                     <td class="td"><span class="text">单价</span></td>
                     <td class="td"><span class="text">总价</span></td>

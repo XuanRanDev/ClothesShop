@@ -24,7 +24,7 @@
             </div>
             <table class="table table-hover table-bordered">
                 <tr>
-                    <td style="text-align: center;">菜名</td>
+                    <td style="text-align: center;">服装名</td>
                     <td style="text-align: center;">服装介绍</td>
                     <td style="text-align: center;">价格</td>
                     <td style="text-align: center;">图片路径</td>

@@ -181,7 +181,7 @@
                         <table class="table table-hover">
                             <tr>
                                 <td class="td"><span class="text">编号</span></td>
-                                <td class="td"><span class="text">菜名</span></td>
+                                <td class="td"><span class="text">服装名</span></td>
                                 <td class="td"><span class="text">数量</span></td>
                                 <td class="td"><span class="text">单价</span></td>
                                 <td class="td"><span class="text">总价</span></td>

@@ -25,7 +25,7 @@
             <table class="table table-hover table-bordered">
                 <tr>
                     <td style="text-align: center;font-weight: bold">用户ID</td>
-                    <td style="text-align: center;font-weight: bold">菜名</td>
+                    <td style="text-align: center;font-weight: bold">服装名</td>
                     <td style="text-align: center;font-weight: bold">数量</td>
                     <td style="text-align: center;font-weight: bold">总价格</td>
                     <td style="text-align: center;font-weight: bold">备注</td>

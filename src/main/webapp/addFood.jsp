@@ -26,8 +26,8 @@
                         <p class="help-block" style="text-align: center;display: inline-block">仅支持.jpg格式.</p>
                     </div>
                     <div class="form-group" style="margin-top:20px;">
-                        <label>菜　　　名：</label>
-                        <input type="text" class="form-control" name="f_name" placeholder="菜名"
+                        <label>服 装 名：</label>
+                        <input type="text" class="form-control" name="f_name" placeholder="服装名"
                                style="width: 200px;display: inline-block;" required>
                     </div>
                     <div class="form-group" style="margin-top:20px;">

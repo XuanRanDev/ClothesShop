@@ -55,8 +55,8 @@
     </head>
     <body>
 
-        <jsp:useBean id="user" scope="session" class="cn.com.scitc.model.User"></jsp:useBean>
-        <jsp:useBean id="food" scope="page" class="cn.com.scitc.model.Food"></jsp:useBean>
+        <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
+        <jsp:useBean id="food" scope="page" class="dev.xuanran.clothesshop.model.Food"></jsp:useBean>
         <div class="pg-header">
             <div class="nav">
                 <div class="logo-area left ">
@@ -142,18 +142,6 @@
                                 <div id="collapseThree" class="panel-collapse collapse">
                                     <div class="panel-body aaa" style="text-align: center;">
                                         <a class="aaa" target="frame" href="<c:url value="/orders"/>">订单信息</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion"
-                                                               href="#collapseFour">评论管理</a></h4>
-                                </div>
-                                <div id="collapseFour" class="panel-collapse collapse">
-                                    <div class="panel-body aaa" style="text-align: center;">
-                                        <a class="aaa" target="frame" href="<c:url value="/adminComment"/>">评论管理</a>
                                     </div>
                                 </div>
                             </div>
