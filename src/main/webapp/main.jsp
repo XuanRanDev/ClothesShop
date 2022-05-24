@@ -98,6 +98,7 @@
                             <c:when test="${user.loginId!=null}">
                                 <span style="color: black">欢迎您：<c:out value="${user.userName}"></c:out></span>
                                 <a href="<c:url value="/exit" />"><span style="color: black">【退出】</span></a>
+                                <span style="color: black">上次登录时间：<c:out value="${user.lastOnline}"></c:out></span>
                             </c:when>
                             <c:otherwise>
                                 <a href="<c:url value="/login" />"><span style="color: black">【登录】</span></a>

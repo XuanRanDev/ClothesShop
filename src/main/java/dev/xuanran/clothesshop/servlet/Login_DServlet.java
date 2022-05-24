@@ -24,6 +24,7 @@ public class Login_DServlet extends HttpServlet {
         user.setPassword(request.getParameter("password"));
         //判断是否登录成功
         User curUser = LoginDao.validatePassword(user);
+//        LoginDao.updateLastOnlineTime(curUser);
         if (curUser != null) {
             HttpSession session = request.getSession(true);
             //将数据传入session中
