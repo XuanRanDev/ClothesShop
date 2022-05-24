@@ -47,7 +47,7 @@ public class ClothesDao {
      * @param clothes bean
      * @return 结果
      */
-    public boolean insertFood(Clothes clothes) {
+    public boolean insertClothes(Clothes clothes) {
         String sql = "insert into clothes(f_image,f_name,price,f_content) values(?,?,?,?)";
         Object[] ps = new Object[4];
         ps[0] = clothes.getF_image();

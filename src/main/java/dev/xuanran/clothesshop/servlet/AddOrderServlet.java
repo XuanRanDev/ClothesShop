@@ -28,7 +28,7 @@ public class AddOrderServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
         System.out.println(user.getLoginId());
         orders.setUser(user);
-        orders.setFood(clothes);
+        orders.setClothes(clothes);
         orders.setO_num(Integer.parseInt(request.getParameter("num")));
 
         orders.setMarkup(request.getParameter("markup"));

@@ -16,7 +16,7 @@
     <body>
         <div style="width:510px;margin: 0 auto;">
 
-            <form method="post" action="<c:url value="/filterAdmin/foodEdit"/>" enctype="multipart/form-data">
+            <form method="post" action="<c:url value="/admin/clothesEdit"/>" enctype="multipart/form-data">
                 <div style="margin:0 auto;width: 430px;height: 800px;">
                     <h2 style="text-align: center">修改服装信息</h2>
                     <div class="form-group" style="margin-top:20px;">

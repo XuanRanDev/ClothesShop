@@ -130,7 +130,7 @@
                                         <a class="aaa" target="frame" href="<c:url value="/clothes"/>">服装信息</a>
                                     </div>
                                     <div class="panel-body aaa" style="text-align: center;">
-                                        <a class="aaa" target="frame" href="<c:url value="/addFood"/>">添加服装</a>
+                                        <a class="aaa" target="frame" href="<c:url value="/addClothes"/>">添加服装</a>
                                     </div>
                                 </div>
                             </div>

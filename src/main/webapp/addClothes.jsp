@@ -16,7 +16,7 @@
     <body>
         <div style="width:510px;margin: 0 auto;">
 
-            <form method="post" action="${pageContext.request.contextPath}/filterAdmin/foodAdd"
+            <form method="post" action="admin/addClothes"
                   enctype="multipart/form-data">
                 <div style="margin:0 auto;width: 430px;height: 800px;">
                     <h2 style="text-align: center">添加服装信息</h2>

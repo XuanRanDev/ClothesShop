@@ -147,7 +147,7 @@
                     %>
                     <div id="body">
                         <h2><span style="color: red;"><%=clothes.getF_name() %> </span>详细信息 欢迎选购</h2>
-                        <div class="left"><img src="getFoodImg?name=<%=clothes.getF_image()%>"
+                        <div class="left"><img src="getClothesImg?name=<%=clothes.getF_image()%>"
                                                style="width: 140px;height: 150px;"/></div>
                         <form class="form" action="<c:url value="/addOrder"/>" method="get"
                               onsubmit="return validateForm()">

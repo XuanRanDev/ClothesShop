@@ -16,7 +16,7 @@ import java.io.IOException;
 
 import static com.jspsmart.upload.File.SAVEAS_PHYSICAL;
 
-@WebServlet(name = "FoodAddServlet", urlPatterns = "/filterAdmin/foodAdd")
+@WebServlet("/admin/addClothes")
 public class AddClothesServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ServletConfig servletConfig;
@@ -61,7 +61,7 @@ public class AddClothesServlet extends HttpServlet {
 
                     //执行上传操作
 
-                    singleFile.saveAs("E:/FoodImg/" + filedir, SAVEAS_PHYSICAL);
+                    singleFile.saveAs("E:/ClothesImg/" + filedir, SAVEAS_PHYSICAL);
                     System.out.println("上传至： " + filedir);
                     String f_name = su.getRequest().getParameter("f_name");
                     String price = su.getRequest().getParameter("price");
@@ -73,8 +73,7 @@ public class AddClothesServlet extends HttpServlet {
                     clothes.setPrice(jg);
                     clothes.setF_image(filedir);
                     ClothesDao dao = new ClothesDao();
-                    dao.insertFood(clothes);
-                    System.out.println("FoodName: " + clothes.getF_name());
+                    dao.insertClothes(clothes);
                     System.out.println("menuPrice: " + clothes.getPrice());
                     System.out.println("menuNotice: " + clothes.getF_content());
                     System.out.println(clothes.getF_image());

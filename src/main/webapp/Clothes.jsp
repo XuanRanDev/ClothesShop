@@ -17,7 +17,7 @@
         <div>
             <div style="text-align:center;margin:0 auto;"><span style="font-size: 50px;">服装信息</span></div>
             <div style="margin-left: 690px;">
-                <form method="get" action="<c:url value="/seleFood"/>">
+                <form method="get" action="<c:url value="/admin/seleClothes"/>">
                     <input type="text" name="key" value="<c:out value="${param.key}" />"/>
                     <input type="submit" value="查询"/>
                 </form>
@@ -38,11 +38,12 @@
                         <td style="text-align: center;"><c:out value="${clothes.price}"/></td>
                         <td style="text-align: center;">img/<c:out value="${clothes.f_image}"/>.jpg</td>
                         <td style="text-align: center;">
-                            <a href="<c:url value="/filterAdmin/delFood?id=${clothes.f_id}"/>"
+                            <a href="<c:url value="/admin/delClothes?id=${clothes.f_id}"/>"
                                onclick="return confirm('是否要删除?')">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </a>
-                            <a href="<c:url value="/editFood?id=${clothes.f_id}"/>" onclick="return confirm('是否要修改?')">
+                            <a href="<c:url value="/admin/clothesEdit?id=${clothes.f_id}"/>"
+                               onclick="return confirm('是否要修改?')">
                                 <span class="glyphicon glyphicon-edit"></span>
                             </a>
                         </td>

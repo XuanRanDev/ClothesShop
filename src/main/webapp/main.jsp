@@ -142,7 +142,7 @@
                         <tr>
                             <c:forEach items="${requestScope.list}" var="clothes">
                                 <div style="float: left;margin-right: 13px;margin-top: 10px;">
-                                    <img src="getFoodImg?name=<c:out value="${clothes.f_image}"/>"
+                                    <img src="getClothesImg?name=<c:out value="${clothes.f_image}"/>"
                                          style="width: 140px;height: 150px;"><br>
                                     <span style="text-align: center">服装名：<c:out value="${clothes.f_name}"/></span><br>
                                     <span style="text-align: center">价格：￥<c:out value="${clothes.price}"/>元 / 件</span>

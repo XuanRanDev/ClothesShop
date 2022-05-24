@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "EditFoodServlet", urlPatterns = "/editClothes")
+@WebServlet("/editClothes")
 public class EditClothesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -19,10 +19,8 @@ public class EditClothesServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-
             Integer id = Integer.parseInt(request.getParameter("id"));
             Clothes clothes = new ClothesDao().searchById(id);
-
             request.setAttribute("food", clothes);
         } catch (Exception er) {
             er.printStackTrace();

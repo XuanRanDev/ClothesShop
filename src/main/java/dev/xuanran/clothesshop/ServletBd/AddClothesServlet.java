@@ -1,7 +1,4 @@
-package dev.xuanran.clothesshop.food;
-
-import dev.xuanran.clothesshop.dao.ClothesDao;
-import dev.xuanran.clothesshop.model.Clothes;
+package dev.xuanran.clothesshop.ServletBd;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,19 +6,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(urlPatterns = "/clothes")
-public class ClothesServlet extends HttpServlet {
+@WebServlet("/addClothes")
+public class AddClothesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ClothesDao dao = new ClothesDao();
-        List<Clothes> clothesList = dao.findAll();
-
-        request.setAttribute("clothesList", clothesList);
-        request.getRequestDispatcher("Clothes.jsp").forward(request, response);
+        request.getRequestDispatcher("addClothes.jsp").forward(request, response);
     }
 }
