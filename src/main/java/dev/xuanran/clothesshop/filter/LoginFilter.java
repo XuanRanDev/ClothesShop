@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("/main")
+@WebFilter({"/main", "/shopping", "/order_search", "/editUser", "/editPassword", "/selePwd", "/information"})
 public class LoginFilter implements Filter {
     public void destroy() {
     }
