@@ -74,8 +74,8 @@
         </style>
     </head>
     <body>
-        <jsp:useBean id="user" class="cn.com.scitc.model.User" scope="session"></jsp:useBean>
-        <jsp:useBean id="ordersBean" class="cn.com.scitc.model.Orders" scope="page"></jsp:useBean>
+        <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
+        <jsp:useBean id="ordersBean" class="dev.xuanran.clothesshop.model.Orders" scope="page"></jsp:useBean>
         <jsp:setProperty property="user" name="ordersBean" value="${user}"/>
         <div id="body">
             <h2>等待配送的订单：</h2>

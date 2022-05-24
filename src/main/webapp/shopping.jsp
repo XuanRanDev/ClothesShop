@@ -116,7 +116,6 @@
                             <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="<c:url value="/shopping"/>" class="menu-item">我的购物车</a>
                             <a href="<c:url value="/order_search"/>" class="menu-item">订单查询</a>
-                            <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
                             <div class="menu-item">
                                 <span>个人信息</span>
                                 <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -131,7 +130,6 @@
                             <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="#" class="menu-item" onclick="return tc()">我的购物车</a>
                             <a href="#" class="menu-item" onclick="return tc()">订单查询</a>
-                            <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
                             <div class="menu-item">
                                 <span>个人信息</span>
                                 <i class="fa fa-caret-down" aria-hidden="true"></i>

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "CommentServlet", urlPatterns = "/comment")
+@Deprecated
 public class CommentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,6 +23,6 @@ public class CommentServlet extends HttpServlet {
         List<Comment> list = dao.findAllCom();
 
         request.setAttribute("list", list);
-        request.getRequestDispatcher("comment.jsp").forward(request, response);
+        // request.getRequestDispatcher("comment.jsp").forward(request, response);
     }
 }

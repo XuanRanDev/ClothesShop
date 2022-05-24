@@ -42,18 +42,7 @@
         </style>
     </head>
     <body>
-        <%
-            /*
-            String loginId = (String) session.getAttribute("loginId");
-            if (loginId == null) {
-                // 保存错误信息到request中, 然后转发到login3.jsp中, 提醒登录
-               request.setAttribute("message", "请登录!");
 
-                // 转发到登录页面
-                response.getWriter().write("<script language='javascript'>alert('请先登录');window.location.href='login';</script>");
-           }
-           */
-        %>
         <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
         <jsp:useBean id="food" scope="page" class="dev.xuanran.clothesshop.model.Food"></jsp:useBean>
         <div class="pg-header">
@@ -70,7 +59,6 @@
                             <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="<c:url value="/shopping"/>" class="menu-item">我的购物车</a>
                             <a href="<c:url value="/order_search"/>" class="menu-item">订单查询</a>
-                            <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
                             <div class="menu-item">
                                 <span>个人信息</span>
                                 <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -85,7 +73,6 @@
                             <a href="<c:url value="/main"/>" class="menu-item">服装信息</a>
                             <a href="#" class="menu-item" onclick="return tc()">我的购物车</a>
                             <a href="#" class="menu-item" onclick="return tc()">订单查询</a>
-                            <a href="<c:url value="/comment"/>" class="menu-item">评论</a>
                             <div class="menu-item">
                                 <span>个人信息</span>
                                 <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -125,25 +112,6 @@
                 ---->
 
                     </div>
-                    <!------
-                    <a class="user-menu right">
-                        消息
-                        <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                        <span class="badge bg-success">2</span>
-                    </a>
-
-                    <a class="user-menu right">
-                        通知
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                        <span class="badge bg-success">2</span>
-                    </a>
-
-                    <a class="user-menu right">
-                        任务
-                        <i class="fa fa-bell-o" aria-hidden="true"></i>
-                        <span class="badge bg-danger">4</span>
-                    </a>
-                     ----->
                 </div>
 
             </div>
