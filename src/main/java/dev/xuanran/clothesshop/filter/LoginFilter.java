@@ -1,12 +1,14 @@
 package dev.xuanran.clothesshop.filter;
 
+import dev.xuanran.clothesshop.model.User;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("/*admin*")
+@WebFilter("/main")
 public class LoginFilter implements Filter {
     public void destroy() {
     }
@@ -17,10 +19,10 @@ public class LoginFilter implements Filter {
         //将ServletResponse类型转换为HttpServletResponse
         HttpServletResponse response = (HttpServletResponse) resp;
         //获取浏览器的session值
-        Object o = request.getSession(true).getAttribute("loginId");
+        User o = (User) request.getSession().getAttribute("user");
         //如果获取的session值为空则跳转登录界面
         if (o == null) {
-            response.sendRedirect("../adminLogin");
+            response.sendRedirect("login");
         } else {
             chain.doFilter(req, resp);
         }

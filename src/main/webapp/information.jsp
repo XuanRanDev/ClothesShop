@@ -7,7 +7,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>菜鸟订餐</title>
+        <title>渲染网上服装商城</title>
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/nav.css">
         <link rel="stylesheet" href="css/commons.css">
