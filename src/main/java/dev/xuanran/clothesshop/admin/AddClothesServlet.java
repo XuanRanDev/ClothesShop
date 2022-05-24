@@ -3,8 +3,8 @@ package dev.xuanran.clothesshop.admin;
 import com.jspsmart.upload.File;
 import com.jspsmart.upload.Files;
 import com.jspsmart.upload.SmartUpload;
-import dev.xuanran.clothesshop.dao.FoodDao;
-import dev.xuanran.clothesshop.model.Food;
+import dev.xuanran.clothesshop.dao.ClothesDao;
+import dev.xuanran.clothesshop.model.Clothes;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -16,8 +16,8 @@ import java.io.IOException;
 
 import static com.jspsmart.upload.File.SAVEAS_PHYSICAL;
 
-@WebServlet(name = "FoodEditServlet", urlPatterns = "/filterAdmin/foodEdit")
-public class FoodEditServlet extends HttpServlet {
+@WebServlet(name = "FoodAddServlet", urlPatterns = "/filterAdmin/foodAdd")
+public class AddClothesServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ServletConfig servletConfig;
 
@@ -26,6 +26,8 @@ public class FoodEditServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.setCharacterEncoding("utf-8");
 
         try {
             //新建一个SmartUpload对象
@@ -45,8 +47,6 @@ public class FoodEditServlet extends HttpServlet {
             String fileType = singleFile.getFileExt();
             //设置上传文件的扩展名
             String[] type = {"JPG", "jpg", "png", "PNG"};
-
-
             // 判断上传文件的类型是否正确
             int place = java.util.Arrays.binarySearch(type, fileType);
             //判断文件扩展名是否正确
@@ -58,29 +58,26 @@ public class FoodEditServlet extends HttpServlet {
                     //以系统时间作为上传文件名称，设置上传完整路径
                     String fileName = String.valueOf(System.currentTimeMillis());
                     String filedir = fileName + "." + singleFile.getFileExt();
-                    request.setCharacterEncoding("gbk");
+
                     //执行上传操作
+
                     singleFile.saveAs("E:/FoodImg/" + filedir, SAVEAS_PHYSICAL);
                     System.out.println("上传至： " + filedir);
-                    System.out.println("路径： " + su.getFiles().getFile(0).getFilePathName());
-                    String id = su.getRequest().getParameter("id");
-                    Integer ids = Integer.parseInt(id);
                     String f_name = su.getRequest().getParameter("f_name");
                     String price = su.getRequest().getParameter("price");
                     String f_content = su.getRequest().getParameter("f_content");
-
-                    Food food = new FoodDao().searchById(ids);
-                    food.setF_name(f_name);
-                    food.setF_content(f_content);
+                    Clothes clothes = new Clothes();
+                    clothes.setF_name(f_name);
+                    clothes.setF_content(f_content);
                     Integer jg = Integer.parseInt(price);
-                    food.setPrice(jg);
-                    food.setF_image(filedir);
-                    FoodDao dao = new FoodDao();
-                    dao.saveFood(food);
-                    System.out.println("FoodName: " + food.getF_name());
-                    System.out.println("menuPrice: " + food.getPrice());
-                    System.out.println("menuNotice: " + food.getF_content());
-                    System.out.println(food.getF_image());
+                    clothes.setPrice(jg);
+                    clothes.setF_image(filedir);
+                    ClothesDao dao = new ClothesDao();
+                    dao.insertFood(clothes);
+                    System.out.println("FoodName: " + clothes.getF_name());
+                    System.out.println("menuPrice: " + clothes.getPrice());
+                    System.out.println("menuNotice: " + clothes.getF_content());
+                    System.out.println(clothes.getF_image());
 
                 }
             }
@@ -88,9 +85,10 @@ public class FoodEditServlet extends HttpServlet {
             e.printStackTrace();
         }
         response.setContentType("text/html;charset=UTF-8");
-        response.getWriter().write("<script language='javascript'>alert('修改成功');history.back(-1);</script>");
+        response.getWriter().write("<script language='javascript'>alert('添加成功');</script>");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }

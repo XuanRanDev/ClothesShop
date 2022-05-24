@@ -1,8 +1,8 @@
 package dev.xuanran.clothesshop.servlet;
 
-import dev.xuanran.clothesshop.dao.FoodDao;
+import dev.xuanran.clothesshop.dao.ClothesDao;
 import dev.xuanran.clothesshop.dao.OrdersDao;
-import dev.xuanran.clothesshop.model.Food;
+import dev.xuanran.clothesshop.model.Clothes;
 import dev.xuanran.clothesshop.model.Orders;
 import dev.xuanran.clothesshop.model.User;
 
@@ -22,13 +22,13 @@ public class AddOrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Orders orders = new Orders();
-        FoodDao dao = new FoodDao();
+        ClothesDao dao = new ClothesDao();
         OrdersDao ordersDao = new OrdersDao();
-        Food food = dao.searchById(Integer.parseInt(request.getParameter("id")));
+        Clothes clothes = dao.searchById(Integer.parseInt(request.getParameter("id")));
         User user = (User) request.getSession().getAttribute("user");
         System.out.println(user.getLoginId());
         orders.setUser(user);
-        orders.setFood(food);
+        orders.setFood(clothes);
         orders.setO_num(Integer.parseInt(request.getParameter("num")));
 
         orders.setMarkup(request.getParameter("markup"));

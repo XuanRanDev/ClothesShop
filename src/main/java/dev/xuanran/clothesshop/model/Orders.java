@@ -13,7 +13,7 @@ public class Orders {
     OrdersDao dao = new OrdersDao();
     private Integer o_id;   //订单id
     private User user;   //用户id
-    private Food food;   //食物id
+    private Clothes clothes;   //食物id
     private Integer o_num;  //订购的数量
     private String markup;      //备注
     private String state;       //状态
@@ -85,12 +85,12 @@ public class Orders {
         this.user = user;
     }
 
-    public Food getFood() {
-        return food;
+    public Clothes getFood() {
+        return clothes;
     }
 
-    public void setFood(Food menu) {
-        this.food = menu;
+    public void setFood(Clothes menu) {
+        this.clothes = menu;
     }
 
     public Integer getO_id() {
@@ -251,7 +251,7 @@ public class Orders {
         return "Orders{" +
                 "o_id=" + o_id +
                 ", user=" + user +
-                ", food=" + food +
+                ", food=" + clothes +
                 ", o_num=" + o_num +
                 ", markup='" + markup + '\'' +
                 ", state='" + state + '\'' +

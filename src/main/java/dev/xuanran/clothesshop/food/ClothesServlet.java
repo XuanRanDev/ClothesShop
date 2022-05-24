@@ -1,7 +1,7 @@
-package dev.xuanran.clothesshop.servlet;
+package dev.xuanran.clothesshop.food;
 
-import dev.xuanran.clothesshop.dao.CommentDao;
-import dev.xuanran.clothesshop.model.Comment;
+import dev.xuanran.clothesshop.dao.ClothesDao;
+import dev.xuanran.clothesshop.model.Clothes;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,18 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CommentServlet", urlPatterns = "/comment")
-@Deprecated
-public class CommentServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/clothes")
+public class ClothesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CommentDao dao = new CommentDao();
-        List<Comment> list = dao.findAllCom();
+        ClothesDao dao = new ClothesDao();
+        List<Clothes> clothesList = dao.findAll();
 
-        request.setAttribute("list", list);
-        // request.getRequestDispatcher("comment.jsp").forward(request, response);
+        request.setAttribute("clothesList", clothesList);
+        request.getRequestDispatcher("Clothes.jsp").forward(request, response);
     }
 }

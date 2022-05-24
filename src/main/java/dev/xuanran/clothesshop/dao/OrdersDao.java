@@ -168,7 +168,7 @@ public class OrdersDao {
     public List<Orders> searchPaidList(User user) {
         String sql = "SELECT * FROM orders WHERE u_id=? and pzstate=?";
         List<Orders> list = new ArrayList<>();
-        FoodDao dao = new FoodDao();
+        ClothesDao dao = new ClothesDao();
         try {
             Connection conn = SqlHelper.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -181,7 +181,7 @@ public class OrdersDao {
                 orders.setUser(UserDao.searchById(rs.getInt("u_id")));
                 System.out.println("userId: " + orders.getUser().getU_id());
                 System.out.println("foodId: " + rs.getInt("f_id"));
-                orders.setFood(FoodDao.searchById(rs.getInt("f_id")));
+                orders.setFood(ClothesDao.searchById(rs.getInt("f_id")));
                 orders.setO_num(rs.getInt("o_num"));
                 orders.setMarkup(rs.getString("markup"));
                 orders.setState(rs.getString("state"));
@@ -203,7 +203,7 @@ public class OrdersDao {
      * 查询等待配送的订单
      */
     public List<Orders> searchBuyPd(User user) {
-        FoodDao dao = new FoodDao();
+        ClothesDao dao = new ClothesDao();
         String sql = "SELECT * FROM orders WHERE u_id=? and pd=? and pzstate=?";
         List<Orders> list = new ArrayList<>();
         try {
@@ -238,7 +238,7 @@ public class OrdersDao {
      * 查询购物车
      */
     public List<Orders> searchBuy(User user) {
-        FoodDao dao = new FoodDao();
+        ClothesDao dao = new ClothesDao();
         String sql = "SELECT * FROM orders WHERE u_id=? and pd=?";
         List<Orders> list = new ArrayList<>();
         try {

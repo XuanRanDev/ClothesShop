@@ -44,7 +44,7 @@
     <body>
 
         <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
-        <jsp:useBean id="food" scope="page" class="dev.xuanran.clothesshop.model.Food"></jsp:useBean>
+        <jsp:useBean id="clothes" scope="page" class="dev.xuanran.clothesshop.model.Clothes"></jsp:useBean>
         <div class="pg-header">
             <div class="nav">
                 <div class="logo-area left ">
@@ -140,14 +140,14 @@
                         </div>
 
                         <tr>
-                            <c:forEach items="${requestScope.list}" var="food">
+                            <c:forEach items="${requestScope.list}" var="clothes">
                                 <div style="float: left;margin-right: 13px;margin-top: 10px;">
-                                    <img src="getFoodImg?name=<c:out value="${food.f_image}"/>"
+                                    <img src="getFoodImg?name=<c:out value="${clothes.f_image}"/>"
                                          style="width: 140px;height: 150px;"><br>
-                                    <span style="text-align: center">服装名：<c:out value="${food.f_name}"/></span><br>
-                                    <span style="text-align: center">价格：￥<c:out value="${food.price}"/>元 / 份</span>
+                                    <span style="text-align: center">服装名：<c:out value="${clothes.f_name}"/></span><br>
+                                    <span style="text-align: center">价格：￥<c:out value="${clothes.price}"/>元 / 件</span>
                                     <div>
-                                        <a href="<c:url value="/information"/>?id=<c:out value="${food.f_id}"/>">加入购物车</a>
+                                        <a href="<c:url value="/information"/>?id=<c:out value="${clothes.f_id}"/>">加入购物车</a>
                                     </div>
                                 </div>
                             </c:forEach>

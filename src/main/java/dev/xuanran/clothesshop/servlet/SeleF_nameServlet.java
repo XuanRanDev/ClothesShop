@@ -1,7 +1,7 @@
 package dev.xuanran.clothesshop.servlet;
 
-import dev.xuanran.clothesshop.dao.FoodDao;
-import dev.xuanran.clothesshop.model.Food;
+import dev.xuanran.clothesshop.dao.ClothesDao;
+import dev.xuanran.clothesshop.model.Clothes;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +19,8 @@ public class SeleF_nameServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String key = request.getParameter("key");
-        FoodDao dao = new FoodDao();
-        List<Food> f_list = dao.findMeu(key);
+        ClothesDao dao = new ClothesDao();
+        List<Clothes> f_list = dao.findMeu(key);
         request.setAttribute("f_list", f_list);
         request.getRequestDispatcher("seleF_name.jsp").forward(request, response);
     }

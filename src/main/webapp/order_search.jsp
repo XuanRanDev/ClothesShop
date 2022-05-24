@@ -55,7 +55,7 @@
     </head>
     <body>
         <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
-        <jsp:useBean id="food" scope="page" class="dev.xuanran.clothesshop.model.Food"></jsp:useBean>
+        <jsp:useBean id="clothes" scope="page" class="dev.xuanran.clothesshop.model.Clothes"></jsp:useBean>
         <div class="pg-header">
             <div class="nav">
                 <div class="logo-area left ">

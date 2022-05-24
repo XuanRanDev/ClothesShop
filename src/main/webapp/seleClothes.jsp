@@ -31,18 +31,18 @@
                     <td style="text-align: center;">操作</td>
                 </tr>
 
-                <c:forEach items="${f_list}" var="food">
+                <c:forEach items="${f_list}" var="clothes">
                     <tr>
-                        <td style="text-align: center;"><c:out value="${food.f_name}"/></td>
-                        <td style="text-align: center;"><c:out value="${food.f_content}"/></td>
-                        <td style="text-align: center;"><c:out value="${food.price}"/></td>
-                        <td style="text-align: center;"><c:out value="${food.f_image}"/></td>
+                        <td style="text-align: center;"><c:out value="${clothes.f_name}"/></td>
+                        <td style="text-align: center;"><c:out value="${clothes.f_content}"/></td>
+                        <td style="text-align: center;"><c:out value="${clothes.price}"/></td>
+                        <td style="text-align: center;"><c:out value="${clothes.f_image}"/></td>
                         <td style="text-align: center;">
-                            <a href="<c:url value="/delFood?id=${food.f_id}"/>" onclick="return confirm('是否要删除?')">
+                            <a href="<c:url value="/delFood?id=${clothes.f_id}"/>" onclick="return confirm('是否要删除?')">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </a>
 
-                            <a href="<c:url value="/editFood?id=${food.f_id}"/>" onclick="return confirm('是否要删除?')">
+                            <a href="<c:url value="/editFood?id=${clothes.f_id}"/>" onclick="return confirm('是否要删除?')">
                                 <span class="glyphicon glyphicon-edit"></span>
                             </a>
                         </td>
