@@ -3,8 +3,8 @@ package dev.xuanran.clothesshop.admin;
 import com.jspsmart.upload.File;
 import com.jspsmart.upload.Files;
 import com.jspsmart.upload.SmartUpload;
-import dev.xuanran.clothesshop.dao.FoodDao;
-import dev.xuanran.clothesshop.model.Food;
+import dev.xuanran.clothesshop.dao.ClothesDao;
+import dev.xuanran.clothesshop.model.Clothes;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -16,8 +16,8 @@ import java.io.IOException;
 
 import static com.jspsmart.upload.File.SAVEAS_PHYSICAL;
 
-@WebServlet(name = "FoodEditServlet", urlPatterns = "/filterAdmin/foodEdit")
-public class FoodEditServlet extends HttpServlet {
+@WebServlet("/admin/clothesEdit")
+public class ClothesPicUploadServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ServletConfig servletConfig;
 
@@ -60,7 +60,7 @@ public class FoodEditServlet extends HttpServlet {
                     String filedir = fileName + "." + singleFile.getFileExt();
                     request.setCharacterEncoding("gbk");
                     //执行上传操作
-                    singleFile.saveAs("E:/FoodImg/" + filedir, SAVEAS_PHYSICAL);
+                    singleFile.saveAs("E:/ClothesImg/" + filedir, SAVEAS_PHYSICAL);
                     System.out.println("上传至： " + filedir);
                     System.out.println("路径： " + su.getFiles().getFile(0).getFilePathName());
                     String id = su.getRequest().getParameter("id");
@@ -69,18 +69,17 @@ public class FoodEditServlet extends HttpServlet {
                     String price = su.getRequest().getParameter("price");
                     String f_content = su.getRequest().getParameter("f_content");
 
-                    Food food = new FoodDao().searchById(ids);
-                    food.setF_name(f_name);
-                    food.setF_content(f_content);
+                    Clothes clothes = new ClothesDao().searchById(ids);
+                    clothes.setF_name(f_name);
+                    clothes.setF_content(f_content);
                     Integer jg = Integer.parseInt(price);
-                    food.setPrice(jg);
-                    food.setF_image(filedir);
-                    FoodDao dao = new FoodDao();
-                    dao.saveFood(food);
-                    System.out.println("FoodName: " + food.getF_name());
-                    System.out.println("menuPrice: " + food.getPrice());
-                    System.out.println("menuNotice: " + food.getF_content());
-                    System.out.println(food.getF_image());
+                    clothes.setPrice(jg);
+                    clothes.setF_image(filedir);
+                    ClothesDao dao = new ClothesDao();
+                    dao.insertClothes(clothes);
+                    System.out.println("menuPrice: " + clothes.getPrice());
+                    System.out.println("menuNotice: " + clothes.getF_content());
+                    System.out.println(clothes.getF_image());
 
                 }
             }

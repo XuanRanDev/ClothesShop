@@ -44,12 +44,14 @@
     <body>
 
         <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
-        <jsp:useBean id="food" scope="page" class="dev.xuanran.clothesshop.model.Food"></jsp:useBean>
+        <jsp:useBean id="clothes" scope="page" class="dev.xuanran.clothesshop.model.Clothes"></jsp:useBean>
+
+
         <div class="pg-header">
             <div class="nav">
                 <div class="logo-area left ">
                     <a href="#">
-                        <span style="font-size: 20px;color:black">渲染网上服装商城</span>
+                        <span style="font-size: 20px;color:white">渲染网上服装商城</span>
                     </a>
                 </div>
 
@@ -89,33 +91,27 @@
                 <div class="right-menu right clearfix">
 
                     <div class="user-info right">
-                        <!----
-                <a href="#" class="avatar" style="color: #0f0f0f">
-                    欢迎你:${sessionScope.loginId}
-                </a>
-                   ---->
+                        ${sessionScope.loginId}
                         <c:choose>
                             <c:when test="${user.loginId!=null}">
-                                <span style="color: black">欢迎您：<c:out value="${user.userName}"></c:out></span>
-                                <a href="<c:url value="/exit" />"><span style="color: black">【退出】</span></a>
+                                <span style="color: white">欢迎您：<c:out value="${user.userName}"></c:out></span>
+                                <a href="<c:url value="/exit" />"><span style="color: white">【退出】</span></a>
+                                <span style="color: white">上次登录时间：<c:out value="${user.lastOnline}"></c:out></span>
                             </c:when>
                             <c:otherwise>
                                 <a href="<c:url value="/login" />"><span style="color: black">【登录】</span></a>
                                 <a href="<c:url value="/register" />"><span style="color: black">【注册】</span></a>
                             </c:otherwise>
                         </c:choose>
-                        <!------
-                <div class="more-info">
-                    <a href="#" class="more-item">个人信息</a>
-                    <a href="<c:url value="/login" />" class="more-item">注销</a>
-                </div>
-                ---->
+
 
                     </div>
                 </div>
 
             </div>
         </div>
+
+
         <div class="pg-body">
             <div class="left-menu">
                 <div class="menu-body">
@@ -140,14 +136,14 @@
                         </div>
 
                         <tr>
-                            <c:forEach items="${requestScope.list}" var="food">
+                            <c:forEach items="${requestScope.list}" var="clothes">
                                 <div style="float: left;margin-right: 13px;margin-top: 10px;">
-                                    <img src="getFoodImg?name=<c:out value="${food.f_image}"/>"
+                                    <img src="getClothesImg?name=<c:out value="${clothes.f_image}"/>"
                                          style="width: 140px;height: 150px;"><br>
-                                    <span style="text-align: center">服装名：<c:out value="${food.f_name}"/></span><br>
-                                    <span style="text-align: center">价格：￥<c:out value="${food.price}"/>元 / 份</span>
+                                    <span style="text-align: center">服装名：<c:out value="${clothes.f_name}"/></span><br>
+                                    <span style="text-align: center">价格：￥<c:out value="${clothes.price}"/>元 / 件</span>
                                     <div>
-                                        <a href="<c:url value="/information"/>?id=<c:out value="${food.f_id}"/>">加入购物车</a>
+                                        <a href="<c:url value="/information"/>?id=<c:out value="${clothes.f_id}"/>">加入购物车</a>
                                     </div>
                                 </div>
                             </c:forEach>

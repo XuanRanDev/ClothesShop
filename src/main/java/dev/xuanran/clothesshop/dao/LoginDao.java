@@ -2,10 +2,9 @@ package dev.xuanran.clothesshop.dao;
 
 import dev.xuanran.clothesshop.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class LoginDao {
 
@@ -25,6 +24,7 @@ public class LoginDao {
                     user.setMobile(rs.getString("mobile"));
                     user.setU_flag(rs.getString("u_flag"));
                     user.setEmail(rs.getString("email"));
+                    user.setLastOnline(rs.getString("lastOnline"));
                     return user;
                 } else {
                     return null;
@@ -34,6 +34,30 @@ public class LoginDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * 更新最后上线时间
+     *
+     * @param user 要更新的用户
+     * @return 更新结果
+     */
+    public static boolean updateLastOnlineTime(User user) {
+        Connection con;
+        String sql = "update user SET lastOnline=? WHERE u_id=?";
+
+        int update = 0;
+        try {
+            con = SqlHelper.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA).format(new Date(System.currentTimeMillis()));
+            preparedStatement.setString(1, date);
+            preparedStatement.setInt(2, user.getU_id());
+            update = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return update == 0;
     }
 
 }

@@ -16,34 +16,34 @@
     <body>
         <div style="width:510px;margin: 0 auto;">
 
-            <form method="post" action="<c:url value="/filterAdmin/foodEdit"/>" enctype="multipart/form-data">
+            <form method="post" action="<c:url value="/admin/clothesEdit"/>" enctype="multipart/form-data">
                 <div style="margin:0 auto;width: 430px;height: 800px;">
                     <h2 style="text-align: center">修改服装信息</h2>
                     <div class="form-group" style="margin-top:20px;">
                         <label for="exampleInputFile">图　　　片：</label>
-                        <input type="file" id="exampleInputFile" name="food.f_image" style="display: inline-block;"
-                               value="<c:out value="${food.f_image}"/>">
+                        <input type="file" id="exampleInputFile" name="clothes.f_image" style="display: inline-block;"
+                               value="<c:out value="${clothes.f_image}"/>">
                         <p class="help-block" style="text-align: center;display: inline-block">仅支持.jpg格式.</p>
                     </div>
                     <div class="form-group" style="margin-top:20px;">
                         <label>服 装 名：</label>
-                        <input type="text" class="form-control" name="f_name" value="<c:out value="${food.f_name}"/>"
+                        <input type="text" class="form-control" name="f_name" value="<c:out value="${clothes.f_name}"/>"
                                style="width: 200px;display: inline-block;" required>
                     </div>
                     <div class="form-group" style="margin-top:20px;">
                         <label>价　　　格：</label>
                         <button type="button" id="subtract">-</button>
                         <input type="text" class="form-control" name="price" id="text"
-                               value="<c:out value="${food.price}"/>" style="width: 50px;display: inline-block;"
+                               value="<c:out value="${clothes.price}"/>" style="width: 50px;display: inline-block;"
                                required>￥
                         <button type="button" id="plus">+</button>
                     </div>
                     <div class="form-group" style="margin-top:20px;">
                         <label>介　　　绍：</label>
-                        <textarea class="form-control" name="f_content" rows="3">${food.f_content}</textarea>
+                        <textarea class="form-control" name="f_content" rows="3">${clothes.f_content}</textarea>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">修改</button>
-                    <input type="hidden" name="id" value="<c:out value="${food.f_id}" />">
+                    <input type="hidden" name="id" value="<c:out value="${clothes.f_id}" />">
                 </div>
             </form>
             <script src="jquery/jquery.min.js"></script>

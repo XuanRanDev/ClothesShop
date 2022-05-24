@@ -56,7 +56,7 @@
     <body>
 
         <jsp:useBean id="user" scope="session" class="dev.xuanran.clothesshop.model.User"></jsp:useBean>
-        <jsp:useBean id="food" scope="page" class="dev.xuanran.clothesshop.model.Food"></jsp:useBean>
+        <jsp:useBean id="clothes" scope="page" class="dev.xuanran.clothesshop.model.Clothes"></jsp:useBean>
         <div class="pg-header">
             <div class="nav">
                 <div class="logo-area left ">
@@ -127,10 +127,10 @@
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse">
                                     <div class="panel-body aaa" style="text-align: center;">
-                                        <a class="aaa" target="frame" href="<c:url value="/food"/>">服装信息</a>
+                                        <a class="aaa" target="frame" href="<c:url value="/clothes"/>">服装信息</a>
                                     </div>
                                     <div class="panel-body aaa" style="text-align: center;">
-                                        <a class="aaa" target="frame" href="<c:url value="/addFood"/>">添加服装</a>
+                                        <a class="aaa" target="frame" href="<c:url value="/addClothes"/>">添加服装</a>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
 
             <div class="right-body">
                 <div class="right-container">
-                    <iframe name="frame" id="iframe" src="<c:url value="/food"/>"></iframe>
+                    <iframe name="frame" id="iframe" src="<c:url value="/clothes"/>"></iframe>
                 </div>
             </div>
         </div>

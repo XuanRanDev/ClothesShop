@@ -13,7 +13,7 @@ public class Orders {
     OrdersDao dao = new OrdersDao();
     private Integer o_id;   //订单id
     private User user;   //用户id
-    private Food food;   //食物id
+    private Clothes clothes;   //食物id
     private Integer o_num;  //订购的数量
     private String markup;      //备注
     private String state;       //状态
@@ -85,12 +85,12 @@ public class Orders {
         this.user = user;
     }
 
-    public Food getFood() {
-        return food;
+    public Clothes getClothes() {
+        return clothes;
     }
 
-    public void setFood(Food menu) {
-        this.food = menu;
+    public void setClothes(Clothes menu) {
+        this.clothes = menu;
     }
 
     public Integer getO_id() {
@@ -134,16 +134,16 @@ public class Orders {
             showBuyList.append(orders.getO_id());
             showBuyList.append("</span></td><td class=\"td1\"><span class=\"food\">");
             //菜名
-            showBuyList.append(orders.getFood().getF_name());
+            showBuyList.append(orders.getClothes().getF_name());
             showBuyList.append("</span></td><td class=\"td1\"><span class=\"number\">");
             //数量
             showBuyList.append(orders.getO_num());
             showBuyList.append("</span></td><td class=\"td1\"><span class=\"per_price\">");
             //单价
-            showBuyList.append(orders.getFood().getPrice());
+            showBuyList.append(orders.getClothes().getPrice());
             showBuyList.append("</span></td><td class=\"td1\"><span class=\"price\">");
             //总价
-            showBuyList.append(orders.getO_num() * orders.getFood().getPrice());
+            showBuyList.append(orders.getO_num() * orders.getClothes().getPrice());
             showBuyList.append("</span></td><td class=\"td1\"><span class=\"information\">");
             //备注：口味要求+其他要求
             showBuyList.append(orders.getMarkup());
@@ -176,7 +176,7 @@ public class Orders {
         totalPrice = 0;
         List<Orders> list = dao.searchBuy(user);
         for (Orders orders : list) {
-            totalPrice += orders.getO_num() * orders.getFood().getPrice();
+            totalPrice += orders.getO_num() * orders.getClothes().getPrice();
             System.out.println(totalPrice);
         }
         return totalPrice;
@@ -192,13 +192,13 @@ public class Orders {
         List<Orders> list = dao.searchBuyPd(user);
         for (Orders orders : list) {
             showNoPayList.append("<tr class=\"tr\"><td class=\"td1\"><span class=\"no\">");
-            showNoPayList.append(orders.getFood().getF_name());
+            showNoPayList.append(orders.getClothes().getF_name());
             showNoPayList.append("</span></td><td class=\"td1\"><span class=\"food\">");
             showNoPayList.append(orders.getO_num());
             showNoPayList.append("</span></td><td class=\"td1\"><span class=\"number\">");
-            showNoPayList.append(orders.getFood().getPrice());
+            showNoPayList.append(orders.getClothes().getPrice());
             showNoPayList.append("</span></td><td class=\"td1\"><span class=\"per_price\">");
-            showNoPayList.append(orders.getFood().getPrice() * orders.getO_num());
+            showNoPayList.append(orders.getClothes().getPrice() * orders.getO_num());
             showNoPayList.append("</span></td><td class=\"td1\"><span class=\"price\">");
             showNoPayList.append(orders.getMarkup());
             showNoPayList.append("</span></td><td class=\"td1\"><span class=\"information\" style=\"color: red;font-weight: bold;\">");
@@ -229,13 +229,13 @@ public class Orders {
         }
         for (Orders orders : list) {
             showPayList.append("<tr class=\"tr\"><td class=\"td1\"><span class=\"no\">");
-            showPayList.append(orders.getFood().getF_name());
+            showPayList.append(orders.getClothes().getF_name());
             showPayList.append("</span></td><td class=\"td1\"><span class=\"food\">");
             showPayList.append(orders.getO_num());
             showPayList.append("</span></td><td class=\"td1\"><span class=\"number\">");
-            showPayList.append(orders.getFood().getPrice());
+            showPayList.append(orders.getClothes().getPrice());
             showPayList.append("</span></td><td class=\"td1\"><span class=\"per_price\">");
-            showPayList.append(orders.getO_num() * orders.getFood().getPrice());
+            showPayList.append(orders.getO_num() * orders.getClothes().getPrice());
             showPayList.append("</span></td><td class=\"td1\"><span class=\"price\">");
             showPayList.append(orders.getMarkup());
             showPayList.append("</span></td><td class=\"td1\"><span class=\"information\" style=\"color: red;font-weight: bold;\">");
@@ -251,7 +251,7 @@ public class Orders {
         return "Orders{" +
                 "o_id=" + o_id +
                 ", user=" + user +
-                ", food=" + food +
+                ", clothes=" + clothes +
                 ", o_num=" + o_num +
                 ", markup='" + markup + '\'' +
                 ", state='" + state + '\'' +

@@ -91,7 +91,6 @@
                 </tr>
                 <jsp:getProperty property="showNoPayList" name="ordersBean"/>
             </table>
-            <!--<div class="span" id="span"><span class="num">总数量：</span><span>3</span></div>-->
 
         </div>
     </body>

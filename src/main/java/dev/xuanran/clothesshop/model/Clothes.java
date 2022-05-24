@@ -1,11 +1,11 @@
 package dev.xuanran.clothesshop.model;
 
 
-import dev.xuanran.clothesshop.dao.FoodDao;
+import dev.xuanran.clothesshop.dao.ClothesDao;
 
 import java.util.List;
 
-public class Food {
+public class Clothes {
 
     private Integer f_id;
     private String f_name;
@@ -55,40 +55,24 @@ public class Food {
     }
 
     public StringBuffer getShowMenuList() {
-        FoodDao dao = new FoodDao();
-        List<Food> list = dao.findAll();
+        ClothesDao dao = new ClothesDao();
+        List<Clothes> list = dao.findAll();
         showMenuList = new StringBuffer();
-        for (Food food : list) {
+        for (Clothes clothes : list) {
             showMenuList.append("<li class=\"content\"><figure class=\"fig\"><img src=\"images/");
-            showMenuList.append(food.getF_image() + ".jpg\" width=\"200px\" class=\"img\"/>");
+            showMenuList.append(clothes.getF_image() + ".jpg\" width=\"200px\" class=\"img\"/>");
             showMenuList.append("<figcaption class=\"describe\">");
-            showMenuList.append("<p class=\"name\">" + food.getF_name() + "</p>");
+            showMenuList.append("<p class=\"name\">" + clothes.getF_name() + "</p>");
             showMenuList.append("<p class=\"price\"><span class=\"sign\">￥</span><span class=\"current\">");
-            showMenuList.append(food.getPrice());
-            showMenuList.append("/份</span></p><div class=\"buying\"><a href=\"information.jsp?id=" + food.getF_id() + "\">加入购物车</a></div></figcaption></figure></li>");
-
-//			<li class="content">
-//            <figure class="fig">
-//                <img src="images/1.jpg" width="200px" class="img"/>
-//                <figcaption class="describe">
-//                    <p class="name">图片</p>
-//                    <p class="price">
-//                        <span class="sign">￥</span>
-//                        <span class="current">19/份</span>
-//                    </p>
-//                    <div class="buying">
-//                        <a href="information.jsp?id=1">加入购物车</a>
-//                    </div>
-//                </figcaption>
-//            </figure>
-//        </li>
+            showMenuList.append(clothes.getPrice());
+            showMenuList.append("/份</span></p><div class=\"buying\"><a href=\"information.jsp?id=" + clothes.getF_id() + "\">加入购物车</a></div></figcaption></figure></li>");
         }
         return showMenuList;
     }
 
     @Override
     public String toString() {
-        return "Food{" +
+        return "Clothes{" +
                 "f_id=" + f_id +
                 ", f_name='" + f_name + '\'' +
                 ", f_content='" + f_content + '\'' +

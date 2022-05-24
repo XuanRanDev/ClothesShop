@@ -1,8 +1,8 @@
 package dev.xuanran.clothesshop.admin;
 
 
-import dev.xuanran.clothesshop.dao.FoodDao;
-import dev.xuanran.clothesshop.model.Food;
+import dev.xuanran.clothesshop.dao.ClothesDao;
+import dev.xuanran.clothesshop.model.Clothes;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,23 +11,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "EditFoodServlet", urlPatterns = "/editFood")
-public class EditFoodServlet extends HttpServlet {
+@WebServlet("/editClothes")
+public class EditClothesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-
             Integer id = Integer.parseInt(request.getParameter("id"));
-            Food food = new FoodDao().searchById(id);
-
-            request.setAttribute("food", food);
+            Clothes clothes = new ClothesDao().searchById(id);
+            request.setAttribute("food", clothes);
         } catch (Exception er) {
             er.printStackTrace();
         }
 
-        request.getRequestDispatcher("editFood.jsp").forward(request, response);
+        request.getRequestDispatcher("editClothes.jsp").forward(request, response);
     }
 }

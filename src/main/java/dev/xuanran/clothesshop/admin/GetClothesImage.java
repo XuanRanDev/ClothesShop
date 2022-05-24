@@ -12,9 +12,9 @@ import java.io.IOException;
 /**
  * Created by XuanRan on 2022/5/7
  */
-@WebServlet("/getFoodImg")
-public class GetFoodImage extends HttpServlet {
-    public static final String IMG_PATH = "E:/FoodImg/";
+@WebServlet("/getClothesImg")
+public class GetClothesImage extends HttpServlet {
+    public static final String IMG_PATH = "E:/ClothesImg/";
     private static final String JPG = "image/jpeg;charset=GB2312";
 
     @Override

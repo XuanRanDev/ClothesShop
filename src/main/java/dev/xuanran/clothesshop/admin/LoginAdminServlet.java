@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet(name = "LoginAdminServlet", urlPatterns = "/loginAdmin")
+@WebServlet("/loginAdmin")
 public class LoginAdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -26,7 +26,7 @@ public class LoginAdminServlet extends HttpServlet {
             session.setAttribute("loginId", loginId);
             response.addCookie(cookie);
             response.addCookie(cookie1);
-            response.sendRedirect("http://localhost:8080/Demo/admin.jsp");
+            response.sendRedirect("admin.jsp");
         } else if (curUser != null) {
             response.getWriter().println("<script LANGUAGE='javascript'> alert('权限不够！！！');self.location='adminLogin'</script>");
         } else {

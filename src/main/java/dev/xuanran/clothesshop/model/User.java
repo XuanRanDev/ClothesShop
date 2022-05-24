@@ -8,7 +8,15 @@ public class User {
     private String mobile;
     private String u_flag;
     private String email;
+    private String lastOnline;
 
+    public String getLastOnline() {
+        return lastOnline;
+    }
+
+    public void setLastOnline(String lastOnline) {
+        this.lastOnline = lastOnline;
+    }
 
     public String getU_flag() {
         return u_flag;
