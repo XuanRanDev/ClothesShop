@@ -3,6 +3,8 @@ package dev.xuanran.clothesshop.dao;
 import dev.xuanran.clothesshop.model.User;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class LoginDao {
 
@@ -41,14 +43,15 @@ public class LoginDao {
      * @return 更新结果
      */
     public static boolean updateLastOnlineTime(User user) {
-        Connection con = null;
+        Connection con;
         String sql = "update user SET lastOnline=? WHERE u_id=?";
 
         int update = 0;
         try {
             con = SqlHelper.getConnection();
             PreparedStatement preparedStatement = con.prepareStatement(sql);
-            preparedStatement.setDate(1, new Date(System.currentTimeMillis()));
+            String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA).format(new Date(System.currentTimeMillis()));
+            preparedStatement.setString(1, date);
             preparedStatement.setInt(2, user.getU_id());
             update = preparedStatement.executeUpdate();
         } catch (SQLException e) {
