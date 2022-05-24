@@ -10,9 +10,6 @@
         <title>登录</title>
         <!-- Bootstrap -->
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-        <!-- 引入组件库 -->
-        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
         <link rel="stylesheet" href="layui/css/layui.css">
 
 
